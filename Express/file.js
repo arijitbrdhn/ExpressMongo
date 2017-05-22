@@ -9,7 +9,7 @@ mongoClient.connect(url,function(err,db)
 	
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
-
+var col=db.collections("user");
 db.createCollection("user",{
 	validator:{
 		email:{$regex:/@gmail\.com$/}
